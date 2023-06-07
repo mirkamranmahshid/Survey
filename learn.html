@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*         class Wall{
+    constructor(width, height){
+        this.width= width;
+        this.height = height;
+    }
+}
+class Room{
+    constructor(wall){
+        this.wall = wall;
+    }
+    print(){
+        console.log(this.wall);
+    }
+} */
+class Wall{
+    constructor(width, height){
+        this.width= width;
+        this.height = height;
+    }
+}
+class Room{
+    constructor(width, height){
+        this.wall = new Wall(width,height);
+    }
+    print(){
+        console.log(this.wall);
+    }
+}
+var wall = new Wall(1,1);
+var room = new Room(wall);
+wall = null;
+room.print();
+    </script>
+</body>
+</html>
