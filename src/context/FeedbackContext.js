@@ -1,14 +1,24 @@
-import { createContext, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 import {v4 as uuidv4} from 'uuid'
-import FeedbackData from  '../data/FeedbackData'
+
 const FeedbackContext = createContext()
 
 export const FeedbackProvider =({children}) => {
-    const [feedback, setFeedback]=useState(FeedbackData)
+    const [isLoading, setIsLoading]= useState(true)
+    const [feedback, setFeedback]=useState([])
     const [feedbackEdit, setFeedbackEdit]=useState({
         item:{}, 
         edit:false
     })
+useEffect(()=>{  fetchFeedback()   },[])
+//Fetch feedback
+const fetchFeedback = async()=>{
+    const response =await fetch(`http://localhost:5000/feedback?_sort=id$_order=desc`)
+    const data= await response.json()
+    setFeedback(data)
+    setIsLoading(false)
+}
+//Delete feedback    
         const deleteFeedback = (id) =>{
             if(window.confirm('این دیدگاه ثبت شده است آیا از پاک کردن آن اطمینان دارید؟')){
                 if(id<Math.ceil(feedback.length/2)+Math.ceil(feedback.length/3)+1) {window.alert('You need administrator permission ....\n نیاز به مجوز مدیر دارید')} 
@@ -33,6 +43,7 @@ export const FeedbackProvider =({children}) => {
                       }
         return <FeedbackContext.Provider  value={{
 feedback,
+isLoading,
 feedbackEdit,
 deleteFeedback,
 addFeedback,
