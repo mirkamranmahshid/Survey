@@ -146,6 +146,7 @@ input:focus {
   color: #fff;
   display: flex;
   margin: 1cqw;
+  padding: 1cqw;
   justify-content: space-between;
   align-items: center;
   font-size: 3dvb;
