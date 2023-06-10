@@ -127,6 +127,8 @@ display: flex;
     display:flex;
     flex-direction:row;
     border: 0.8px solid #ccc;
+    padding: 8px 10px;
+    border-radius: 8px;
 
  
 }
@@ -171,8 +173,9 @@ input:focus {
 }
 
 .btn {
-  -ms-layout-grid: right;
-    display:inline-block;
+-ms-layout-grid: right;
+float: right;
+display:inline-block;
 padding:0.35em 1.2em;
 border:0.1em solid #FFFFFF;
 margin:0 0.3em 0.3em 0;
@@ -188,6 +191,7 @@ transition: all 0.2s;
 }
 @media all and (max-width:30em){
   .btn{
+    float: right;
   display:block;
   margin:0.4em auto;
   }
