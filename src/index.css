@@ -120,17 +120,11 @@ display: flex;
 }
 
 .input-group {
-   float:left;
-    margin-top:2vh;
-    padding:0px;
-    width:100%;
-    display:flex;
-    flex-direction:row;
-    border: 0.8px solid #ccc;
-    padding: 8px 10px;
-    border-radius: 8px;
-
- 
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 8px;
 }
 
 input {
@@ -174,7 +168,7 @@ input:focus {
 
 .btn {
 -ms-layout-grid: right;
-float: right;
+float:right;
 display:inline-block;
 padding:0.35em 1.2em;
 border:0.1em solid #FFFFFF;
