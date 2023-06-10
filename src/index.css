@@ -44,10 +44,6 @@ header {
   border-radius: 1.cap;
   padding: 2em 2.5em;
   margin: 1% 0;
-  box-sizing: border-box;
-  text-decoration:none;
-  text-align:center;
-  transition: all 0.2s;
   position: relative;
 }
 
