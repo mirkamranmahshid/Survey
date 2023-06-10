@@ -48,11 +48,11 @@ function FeedbackForm() {
   return (
     <Card>
       <form onSubmit={handleSubmit}>
-        <h2> خواهشمندیم چند ثانیه از زمان با ارزش خود را به ما بدهید و با امتیاز دادن در مسیر پیشرفت ما را راهنمایی کنید </h2>
+        <h3> خواهشمندیم چند ثانیه از زمان با ارزش خود را به ما بدهید و با امتیاز دادن در مسیر پیشرفت ما را راهنمایی کنید </h3>
         {/* @do - rating select component */}
             <RatingSelect  select={(rating) => setRating(rating)}/>
         <div className="input-group">
-            <input onChange={handleTextChange} type='text' placeholder=' خواهشمندیم دیدگاه خود را بنویسید'  value= {text} />
+            <input onChange={handleTextChange} type='text' placeholder='دیدگاه را بنویسید'  value= {text} />
             <Button type='submit' isDisabled={btnDisabled}>ثبت دیدگاه</Button>
         </div>
         {message && <div className='message'>{message}</div>}
