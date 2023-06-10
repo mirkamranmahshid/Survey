@@ -26,7 +26,7 @@ ul {
 }
 
 header {
-  height: 70px;
+  height: 10%;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -123,14 +123,14 @@ display: flex;
   display: flex;
   flex-direction: row;
   border: 0.8px solid #ccc;
-  padding: 0.6% 0.9%0;
-  border-radius: 0.8%;
+  width: 84%;
+ 
 }
 
 input {
   flex-grow: 2;
   border: none;
-  font-size: 1em;
+  font-size: 0.6em;
 }
 
 input:focus {
@@ -142,7 +142,7 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 0.4rem;
 }
 
 .num-display {
@@ -166,17 +166,25 @@ input:focus {
 }
 
 .btn {
-  size: 5%;
-  color: #fff;
-  border: 0;
-  border-radius: 0.8%;
-  color: #fff;
-  width: 15%;
-  height: 20%;
-  cursor: pointer;
-  font-size: 1.6rem;
-  font-weight: bold;
+  display:inline-block;
+padding:0.35em 1.2em;
+border:0.1em solid #FFFFFF;
+margin:0 0.3em 0.3em 0;
+border-radius:0.12em;
+box-sizing: border-box;
+text-decoration:none;
+font-weight:300;
+color:#FFFFFF;
+text-align:center;
+transition: all 0.2s;
+  
 }
+@media all and (max-width:30em){
+  .btn{
+  display:block;
+  margin:0.4em auto;
+  }
+  }
 
 .btn-primary {
   background-color: #202142;
@@ -206,7 +214,7 @@ input:focus {
   padding-top: 10px;
   text-align: center;
   color: rgb(175, 146, 204);
-  font-size: 2rem;
+  font-size: 0.8rem;
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
@@ -248,10 +256,15 @@ input:focus {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 30px 0 40px;
+    margin: 1em 0 1.5em;
   }
 
   .input-group input {
-    width: 84%;
+    width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
   }
 }
