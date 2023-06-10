@@ -126,14 +126,12 @@ display: flex;
     width:100%;
     display:flex;
     flex-direction:row;
-    word-break: break-all;
-  border: 0.8px solid #ccc;
+    border: 0.8px solid #ccc;
 
  
 }
 
 input {
-  flex-grow: 2;
   border: none;
   font-size: 0.6em;
 }
@@ -179,7 +177,7 @@ border:0.1em solid #FFFFFF;
 margin:0 0.3em 0.3em 0;
 border-radius:0.12em;
 box-sizing: border-box;
-block-size: 20%;
+block-size: 80%;
 text-decoration:none;
 font-weight:300;
 color:#FFFFFF;
@@ -274,8 +272,7 @@ transition: all 0.2s;
     width:100%;
     display:flex;
     flex-direction:row;
-    word-break: break-all;
-  resize: both;
+    resize: both;
   font-size: medium;
   }
 }
