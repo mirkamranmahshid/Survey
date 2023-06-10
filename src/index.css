@@ -43,7 +43,7 @@ header {
   color: #333;
   border-radius: 1.cap;
   padding: 2em 2.5em;
-  margin: 0.4em 0;
+  margin: 1% 0;
   position: relative;
 }
 
@@ -120,13 +120,13 @@ display: flex;
 }
 
 .input-group {
-  float:left;
-  margin-top:2vh;
-  padding:0px;
-  width:100%;
-  display:flex;
-  flex-direction:row;
-  word-break: break-all;
+   float:left;
+    margin-top:2vh;
+    padding:0px;
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    word-break: break-all;
   border: 0.8px solid #ccc;
 
  
