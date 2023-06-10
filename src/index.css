@@ -263,8 +263,7 @@ transition: all 0.2s;
   .input-group input {
     width: 80%;
     border: 1px solid #ccc;
-  border-radius: 95%;
-  box-sizing: border-box;
+   box-sizing: border-box;
   size: 80;
   resize: both;
   font-size: larger;
