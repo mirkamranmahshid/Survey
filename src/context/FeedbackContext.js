@@ -1,23 +1,23 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState} from "react"
 import {v4 as uuidv4} from 'uuid'
-
+import feedbackData from '../data/FeedbackData'
 const FeedbackContext = createContext()
-
+//import { useEffect } from "react"
 export const FeedbackProvider =({children}) => {
-    const [isLoading, setIsLoading]= useState(true)
-    const [feedback, setFeedback]=useState([])
+    //const [isLoading, setIsLoading]= useState(true)
+    const [feedback, setFeedback]=useState(feedbackData)
     const [feedbackEdit, setFeedbackEdit]=useState({
         item:{}, 
         edit:false
     })
-useEffect(()=>{  fetchFeedback()   },[])
+//useEffect(()=>{  fetchFeedback()   },[])
 //Fetch feedback
-const fetchFeedback = async()=>{
+/* const fetchFeedback = async()=>{
     const response =await fetch(`http://localhost:5000/feedback?_sort=id$_order=desc`)
     const data= await response.json()
     setFeedback(data)
     setIsLoading(false)
-}
+} */
 //Delete feedback    
         const deleteFeedback = (id) =>{
             if(window.confirm('این دیدگاه ثبت شده است آیا از پاک کردن آن اطمینان دارید؟')){
@@ -43,7 +43,7 @@ const fetchFeedback = async()=>{
                       }
         return <FeedbackContext.Provider  value={{
 feedback,
-isLoading,
+//isLoading,
 feedbackEdit,
 deleteFeedback,
 addFeedback,
