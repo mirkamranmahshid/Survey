@@ -11,8 +11,8 @@ import Post from './components/Post'
 
 function App() {
                 return ( <FeedbackProvider>
-        <Router>
-        <Header />
+        <Router> 
+         <Header />
         <div className='container'>      
            <Routes>
                     <Route   exact path='/'  element={
