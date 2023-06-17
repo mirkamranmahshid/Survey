@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect} from "react"
-//import {v4 as uuidv4} from 'uuid'
+import {v4 as uuidv4} from 'uuid'
 import feedbackData from '../data/FeedbackData'
 const FeedbackContext = createContext()
 
@@ -23,20 +23,24 @@ useEffect(()=>{  fetchFeedback()   },[])
             if(window.confirm('این دیدگاه ثبت شده است آیا از پاک کردن آن اطمینان دارید؟')){
                 if(id<Math.ceil(feedback.length/2)+Math.ceil(feedback.length/3)+1) {window.alert('You need administrator permission ....\n نیاز به مجوز مدیر دارید')} 
                  else {
+                    setFeedback(feedback.filter((item) => item.id !==id))
                  await fetch(`/feedback/$(id)`, {method:'DELETE' })   
                 setFeedback(feedback.filter((item) => item.id !==id))}
                                                                                                }  
                                       }
-                          const addFeedback = async (newFeedback) => { 
-                            const response =await fetch('/feedback', {
+                          const addFeedback = async (newFeedback) => {
+                            newFeedback.id = uuidv4()
+                                 setFeedback([newFeedback, ...feedback]) 
+                                  const response =await fetch('/feedback', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json'},
-                                body: JSON.stringify(newFeedback)
-                            })
+                                body: JSON.stringify(newFeedback)    
+                                                       })
+
                                  const data =await response.json()
                                   setFeedback([data, ...feedback])
-                                                                } 
-                                                    //set item to be updated                                   
+                                                                    } 
+                                                    //set item to be Edited                                  
                                              const editFeedback= (item) =>{
                                                   setFeedbackEdit({
                                                                       item,
@@ -44,7 +48,9 @@ useEffect(()=>{  fetchFeedback()   },[])
                                                                   })
                                                                           } 
                                 //Update feedback
-                      const updateFeedback =async (id, updItem)=>{ const response= await fetch(`/feedback/${id}`, {
+                      const updateFeedback =async (id, updItem)=>{ 
+                        setFeedback(feedback.map((item) => (item.id===id ? {...item, ...updItem} : item)))
+                        const response= await fetch(`/feedback/${id}`, {
                         method: 'PUT',
                         headers: {'Content-Type':'application/json'},
                         body: JSON.stringify(updItem)
