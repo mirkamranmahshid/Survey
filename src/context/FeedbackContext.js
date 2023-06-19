@@ -4,7 +4,7 @@ import feedbackData from '../data/FeedbackData'
 const FeedbackContext = createContext()
 
 export const FeedbackProvider =({children}) => {
-    const [isLoading, setIsLoading]= useState(true)
+  //  const [isLoading, setIsLoading]= useState(true)
     const [feedback, setFeedback]=useState(feedbackData)
     const [feedbackEdit, setFeedbackEdit]=useState({
         item:{}, 
@@ -16,7 +16,7 @@ useEffect(()=>{  fetchFeedback()   },[])
     const response =await fetch(`https://my-json-server.typicode.com/mirkamranmahshid/survey/feedback?_sort=id$_order=desc`)
     const data= await response.json()
     setFeedback(data)
-    setIsLoading(false)
+  //  setIsLoading(false)
 } 
 //Delete feedback    
         const deleteFeedback =async (id) =>{
@@ -60,7 +60,7 @@ useEffect(()=>{  fetchFeedback()   },[])
                       }
         return <FeedbackContext.Provider  value={{
 feedback,
-isLoading,
+//isLoading,
 feedbackEdit,
 deleteFeedback,
 addFeedback,
